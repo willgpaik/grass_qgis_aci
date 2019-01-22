@@ -43,11 +43,28 @@ From: centos:centos7
     sudo rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
     yum -y install qgis-devel
     yum -y install gdal gdal-python gdal-devel
-    wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
-    yum -y update
+#    wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
+#    yum -y update
+#    yum -y install grass grass-libs grass-gui liblas
+#    yum -y install grass-devel liblas liblas-devel
+#    yum -y update
+
+    # GRASS 7.4.4
+    wget -O /etc/yum.repos.d/grass74-epel-6.repo https://copr.fedoraproject.org/coprs/neteler/grass74_epel6/repo/epel-6/neteler-grass74_epel6-epel-6.repo
+    yum -y install epel-release
+
+    # get PostgreSQL
+    yum -y install http://yum.postgresql.org/9.6/redhat/rhel-6.8-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+    yum -y groupinstall "PostgreSQL Database Server 9.6 PGDG"
+    yum -y install postgis2_96
+    service postgresql-9.6 initdb
+    chkconfig postgresql-9.6 on service postgresql-9.6 start
+
+    yum update
     yum -y install grass grass-libs grass-gui liblas
     yum -y install grass-devel liblas liblas-devel
     yum -y update
+    
    
     mkdir -p /storage/home
     mkdir -p /storage/work
