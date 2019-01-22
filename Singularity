@@ -50,19 +50,31 @@ From: centos:centos7
 #    yum -y update
 
     # GRASS 7.4.4
-    wget -O /etc/yum.repos.d/grass74-epel-6.repo https://copr.fedoraproject.org/coprs/neteler/grass74_epel6/repo/epel-6/neteler-grass74_epel6-epel-6.repo
-    yum -y install epel-release
+    # First install these three dependencies:
+    # https://copr.fedorainfracloud.org/coprs/neteler/python-matplotlib/
+    	wget -O /etc/yum.repos.d/python-matplotlib.repo https://copr.fedoraproject.org/coprs/neteler/python-matplotlib/repo/epel-7/neteler-python-matplotlib-epel-7.repo
+    	# install qhull dependency from EPEL7
+	yum -y install epel-release
+	yum -y install qhull
 
-    # get PostgreSQL
-    yum -y install http://yum.postgresql.org/9.6/redhat/rhel-6.8-x86_64/pgdg-centos96-9.6-3.noarch.rpm
-    yum -y groupinstall "PostgreSQL Database Server 9.6 PGDG"
-    yum -y install postgis2_96
-    service postgresql-9.6 initdb
-    chkconfig postgresql-9.6 on service postgresql-9.6 start
-
+	# now install this package
+	yum -y install python-matplotlib
+    # https://copr.fedorainfracloud.org/coprs/neteler/liblas/
+    	yum -y install liblas liblas-devel
+    # https://copr.fedorainfracloud.org/coprs/neteler/laszip/
+    	yum -y install laszip-devel
+    #
+    # Then install GDAL from EPEL
+    yum install epel-release
+    yum install gdal gdal-python gdal-devel
+    #
+    # Now install GRASS GIS 7:
+    wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
     yum update
-    yum -y install grass grass-libs grass-gui
-    yum update
+    yum -y install 
+    yum -y install grass grass-libs grass-gui liblas
+    # needed for GRASS Addons (via g.extension)
+    yum -y install grass-devel liblas liblas-devel
     
    
     mkdir -p /storage/home
