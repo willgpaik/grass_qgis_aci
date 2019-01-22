@@ -61,9 +61,8 @@ From: centos:centos7
     chkconfig postgresql-9.6 on service postgresql-9.6 start
 
     yum update
-    yum -y install grass grass-libs grass-gui liblas
-    yum -y install grass-devel liblas liblas-devel
-    yum -y update
+    yum -y install grass grass-libs grass-gui
+    yum update
     
    
     mkdir -p /storage/home
