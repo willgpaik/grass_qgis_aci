@@ -62,6 +62,8 @@ From: centos:centos7
     yum -y install grass grass-libs grass-gui liblas
     # needed for GRASS Addons (via g.extension)
     yum -y install grass-devel liblas liblas-devel
+    # To fix issue with "libpq-fe.h not found"
+    yum -y install postgresql-devel
     
     # Install QGIS
     rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
@@ -75,14 +77,14 @@ From: centos:centos7
     mkdir -p /gpfs/scratch
     mkdir -p /gpfs/group
     
-    mkdir -p /gpfs/scratch/test
-    cd /gpfs/scratch
-    wget https://grass.osgeo.org/sampledata/worldlocation.tar.gz
-    tar -xf worldlocation.tar.gz
+#    mkdir -p /gpfs/scratch/test
+#    cd /gpfs/scratch
+#    wget https://grass.osgeo.org/sampledata/worldlocation.tar.gz
+#    tar -xf worldlocation.tar.gz
     
-    grass74 /gpfs/scratch/worldlocation/PERMANENT --exec g.extension r.accumulate r.snap.stream r.cell.area
+#    grass74 /gpfs/scratch/worldlocation/PERMANENT --exec g.extension r.accumulate r.snap.stream r.cell.area
     
-    rm -rf worldlocation
-    rm worldlocation.tar.gz
+#    rm -rf worldlocation
+#    rm worldlocation.tar.gz
     
     
