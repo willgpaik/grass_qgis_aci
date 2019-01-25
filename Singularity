@@ -20,13 +20,10 @@ From: centos:centos7
     yum install -y vte-devel
     yum install -y vte291-devel
     yum install -y vte-profile
-#    yum -y install devtoolset-7
     yum install -y devtoolset-7-gcc*
     scl enable devtoolset-7 bash
     yum -y groups install "Development Tools"
-#    yum -y groups install "GNOME Desktop"
     yum -y groups install "Base"
-#    yum -y groups install "X Window System" "Desktop" "Fonts"
     yum -y install git cmake gcc-c++ gcc binutils \
 	libX11-devel libXpm-devel libXft-devel libXext-devel
     yum -y install gcc-gfortran openssl-devel pcre-devel \
@@ -40,14 +37,6 @@ From: centos:centos7
 #    yum -y install boost-devel
     yum -y install patch
     yum -y install git g++ zlib-devel libqt4-devel libgl1-mesa-dev libtiff-devel
-#    rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
-#    yum -y install qgis-devel
-#    yum -y install gdal gdal-python gdal-devel
-#    wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
-#    yum -y update
-#    yum -y install grass grass-libs grass-gui liblas
-#    yum -y install grass-devel liblas liblas-devel
-#    yum -y update
 
     # Install GRASS 7.4.4
     # First install these three dependencies:
@@ -56,7 +45,6 @@ From: centos:centos7
     	# install qhull dependency from EPEL7
 	yum -y install epel-release
 	yum -y install qhull
-
 	# now install this package
 	yum -y install python-matplotlib
     # https://copr.fedorainfracloud.org/coprs/neteler/liblas/
@@ -65,13 +53,12 @@ From: centos:centos7
     	yum -y install laszip-devel
     #
     # Then install GDAL from EPEL
-    yum -y install epel-release
+#    yum -y install epel-release
     yum -y install gdal gdal-python gdal-devel
     #
     # Now install GRASS GIS 7:
     wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
     yum -y update
-    yum -y install 
     yum -y install grass grass-libs grass-gui liblas
     # needed for GRASS Addons (via g.extension)
     yum -y install grass-devel liblas liblas-devel
@@ -79,7 +66,10 @@ From: centos:centos7
     # Install QGIS
     rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
     yum -y install qgis-devel
-    yum -y install gdal gdal-python gdal-devel
+#    yum -y install gdal gdal-python gdal-devel
+    yum -y update
+    
+    grass74 --exec g.extension.all
     
    
     mkdir -p /storage/home
