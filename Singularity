@@ -69,10 +69,20 @@ From: centos:centos7
 #    yum -y install gdal gdal-python gdal-devel
     yum -y update
     
-    grass74 --exec g.extension.all
     
-   
     mkdir -p /storage/home
     mkdir -p /storage/work
     mkdir -p /gpfs/scratch
     mkdir -p /gpfs/group
+    
+    mkdir -p /gpfs/scratch/test
+    cd /gpfs/scratch
+    wget https://grass.osgeo.org/sampledata/worldlocation.tar.gz
+    tar -xf worldlocation.tar.gz
+    
+    grass74 /gpfs/scratch/worldlocation/PERMANENT --exec g.extension r.accumulate r.snap.stream r.cell.area
+    
+    rm -rf worldlocation
+    rm worldlocation.tar.gz
+    
+    
