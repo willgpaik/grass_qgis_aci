@@ -21,6 +21,7 @@ From: centos:centos7
     vte291-devel \
     vte-profile \
     devtoolset-7-gcc*
+    scl enable devtoolset-7 bash
     yum -y groups install "Development Tools"
     yum -y groups install "Base"
     yum -y install git \
@@ -59,7 +60,6 @@ From: centos:centos7
 	libqt4-devel \
 	libgl1-mesa-dev \
 	libtiff-devel
-    scl enable devtoolset-7 bash
 
     # Install GRASS 7.4.4
     # First install these three dependencies:
