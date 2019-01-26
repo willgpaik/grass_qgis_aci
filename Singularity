@@ -20,7 +20,7 @@ From: centos:centos7
     vte-devel \
     vte291-devel \
     vte-profile \
-    ydevtoolset-7-gcc*
+    devtoolset-7-gcc*
     yum -y groups install "Development Tools"
     yum -y groups install "Base"
     yum -y install git \
