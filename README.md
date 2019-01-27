@@ -14,7 +14,7 @@ If Mapset is not installed, download sample Mapset to "scratch" directory:
 ```
 $ cd ~/scratch
 $ wget https://grass.osgeo.org/sampledata/worldlocation.tar.gz
-$tar -xf worldlocation.tar.gz
+$ tar -xf worldlocation.tar.gz
     
 $ grass74 ~/scratch/worldlocation/PERMANENT --exec g.extension <ADD-ON>
 ```
