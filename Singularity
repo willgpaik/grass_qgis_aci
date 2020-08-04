@@ -56,7 +56,7 @@ From: centos:centos7
     yum -y install gdal gdal-python gdal-devel
     #
     # Now install GRASS GIS 7:
-    wget -O /etc/yum.repos.d/grass74.repo https://copr.fedoraproject.org/coprs/neteler/grass74/repo/epel-7/neteler-grass74-epel-7.repo
+    wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
     yum -y update
     yum -y install grass grass-libs grass-gui liblas
     # needed for GRASS Addons (via g.extension)
@@ -67,22 +67,22 @@ From: centos:centos7
     yum -y install geos-devel
     
     # Install QGIS
-    rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
+#    rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
     yum -y install qgis-devel
     yum -y update
     
     
-    mkdir -p /storage/home
-    mkdir -p /storage/work
-    mkdir -p /gpfs/scratch
-    mkdir -p /gpfs/group
+#    mkdir -p /storage/home
+#    mkdir -p /storage/work
+#    mkdir -p /gpfs/scratch
+#    mkdir -p /gpfs/group
     
 #    mkdir -p /gpfs/scratch/test
 #    cd /gpfs/scratch
 #    wget https://grass.osgeo.org/sampledata/worldlocation.tar.gz
 #    tar -xf worldlocation.tar.gz
     
-#    grass74 /gpfs/scratch/worldlocation/PERMANENT --exec g.extension r.accumulate r.snap.stream r.cell.area
+#    grass78 /gpfs/scratch/worldlocation/PERMANENT --exec g.extension r.accumulate r.snap.stream r.cell.area
     
 #    rm -rf worldlocation
 #    rm worldlocation.tar.gz
