@@ -37,9 +37,11 @@ From: centos:centos7
 #    yum -y install boost-devel
     yum -y install patch
     yum -y install git g++ zlib-devel libqt4-devel libgl1-mesa-dev libtiff-devel
+    # Required by GRASS 7.8.3
+    yum -y install wxPython-devel
     
 
-    # Install GRASS 7.4.4
+    # Install GRASS 7.8.3
     # First install these three dependencies:
     # https://copr.fedorainfracloud.org/coprs/neteler/python-matplotlib/
     	wget -O /etc/yum.repos.d/python-matplotlib.repo https://copr.fedoraproject.org/coprs/neteler/python-matplotlib/repo/epel-7/neteler-python-matplotlib-epel-7.repo
