@@ -39,6 +39,7 @@ From: centos:centos7
     yum -y install git g++ zlib-devel libqt4-devel libgl1-mesa-dev libtiff-devel
     # Required by GRASS 7.8.3
     yum -y install wxPython-devel
+    pip3 install wxPython
     
 
     # Install GRASS 7.8.3
