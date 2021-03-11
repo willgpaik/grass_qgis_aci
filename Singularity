@@ -13,8 +13,6 @@ From: willgpaik/centos8_roar
     # commands to be executed inside container during bootstrap
     # add python and install some packages
     dnf update -y
-    dnf install -y centos-release-scl
-    dnf install -y vte-devel
     dnf install -y vte291-devel
     dnf install -y vte-profile
     dnf -y groups install "Development Tools"
@@ -24,7 +22,7 @@ From: willgpaik/centos8_roar
     dnf -y install gcc-gfortran openssl-devel pcre-devel \
 	mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 	fftw-devel cfitsio-devel graphviz-devel \
-	avahi-compat-libdns_sd-devel libldap-dev python-devel \
+	avahi-compat-libdns_sd-devel openldap \
 	libxml2-devel gsl-devel
     dnf -y install openmpi-devel
     dnf -y install cmake3
