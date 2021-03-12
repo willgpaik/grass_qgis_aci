@@ -28,7 +28,7 @@ From: willgpaik/centos8_roar
     dnf -y install cmake3
     dnf -y install hdf5-devel
     dnf -y install patch
-    dnf -y install git g++ zlib-devel libqt4-devel libgl1-mesa-dev libtiff-devel
+    dnf -y install git zlib-devel libtiff-devel
     # qgis dependencies: https://github.com/qgis/QGIS/blob/master/INSTALL.md#3-building-on-gnulinux
     dnf -y install proj-devel libspatialite-devel qwt-qt5-devel expat-devel qca-qt5-devel libzip-devel
     # Required by GRASS 7.8.5
