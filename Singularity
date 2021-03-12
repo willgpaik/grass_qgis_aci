@@ -39,23 +39,23 @@ From: willgpaik/centos8_roar
     # Install GRASS 7.8.5
     # First install these three dependencies:
     # https://copr.fedorainfracloud.org/coprs/neteler/python-matplotlib/
-    dnf -O /etc/yum.repos.d/python-matplotlib.repo https://copr.fedoraproject.org/coprs/neteler/python-matplotlib/repo/epel-7/neteler-python-matplotlib-epel-7.repo
+    #dnf -O /etc/yum.repos.d/python-matplotlib.repo https://copr.fedoraproject.org/coprs/neteler/python-matplotlib/repo/epel-7/neteler-python-matplotlib-epel-7.repo
     # install qhull dependency from EPEL7
-    dnf -y install qhull
+    #dnf -y install qhull
     # now install this package
-    dnf -y install python-matplotlib
+    #dnf -y install python-matplotlib
     # https://copr.fedorainfracloud.org/coprs/neteler/liblas/
-    dnf -y install liblas liblas-devel
+    #dnf -y install liblas liblas-devel
     # https://copr.fedorainfracloud.org/coprs/neteler/laszip/
-    dnf -y install laszip-devel
+    #dnf -y install laszip-devel
     
     # Then install GDAL from EPEL
     dnf -y install gdal gdal-python gdal-devel
     
     # Now install GRASS GIS 7:
-    wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
+    #wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
     dnf -y update
-    dnf -y install grass grass-libs grass-gui liblas
+    #dnf -y install grass grass-libs grass-gui liblas
     # needed for GRASS Addons (via g.extension)
     dnf -y install grass-devel liblas liblas-devel
     
