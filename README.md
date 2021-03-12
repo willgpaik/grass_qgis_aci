@@ -1,5 +1,5 @@
 # grass_qgis_aci
-Singularity recipe for GRASS GIS and QGIS on Centos 7 For ICS ACI clusters
+Singularity recipe for GRASS GIS and QGIS on Centos 8 For ICS Roar clusters
 
 2019/1/22  
 GRASS 7.4.4 is updated
@@ -24,3 +24,6 @@ $ cd ~/scartch
 $ rm -rf worldlocation
 $ rm worldlocation.tar.gz
 ```
+2021/03/10  
+OS is upgraded to Centos 8 from Centos 7  
+GRASS is upgraded to 7.8.5
