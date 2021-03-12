@@ -32,8 +32,7 @@ From: willgpaik/centos8_roar
     # qgis dependencies: https://github.com/qgis/QGIS/blob/master/INSTALL.md#3-building-on-gnulinux
     dnf -y install proj-devel libspatialite-devel qwt-qt5-devel expat-devel qca-qt5-devel libzip-devel
     # Required by GRASS 7.8.5
-    dnf -y install wxPython-devel python2-pip
-    pip2 install wxPython
+    dnf -y install python3-wxpython4
     pip3 install wxPython
     
 
