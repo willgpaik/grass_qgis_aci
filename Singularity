@@ -50,14 +50,14 @@ From: willgpaik/centos8_roar
     #dnf -y install laszip-devel
     
     # Then install GDAL from EPEL
-    dnf -y install gdal gdal-python gdal-devel
+    dnf -y install gdal gdal-python-tools gdal-devel
     
     # Now install GRASS GIS 7:
     #wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
     dnf -y update
     #dnf -y install grass grass-libs grass-gui liblas
     # needed for GRASS Addons (via g.extension)
-    dnf -y install grass-devel liblas liblas-devel
+    dnf -y install grass-devel vblas-devel
     
     # To fix issue with "libpq-fe.h not found" and "geos_c.h" not found
     dnf -y install postgresql-devel
@@ -65,7 +65,10 @@ From: willgpaik/centos8_roar
     
     # Install QGIS
 #    rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
+    dnf copr enable dani/qgis
     dnf -y install qgis-devel
+    dnf -y install python3-qgis
+    dnf install qgis-grass
     dnf -y update
     
     
