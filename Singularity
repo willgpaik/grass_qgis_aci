@@ -63,12 +63,4 @@ From: willgpaik/centos8_roar
     dnf -y install postgresql-devel
     dnf -y install geos-devel
     
-    # Install QGIS
-#    rpm -Uvh http://elgis.argeo.org/repos/5/elgis-release-5-5_0.noarch.rpm
-    dnf copr enable dani/qgis
-    dnf -y install qgis-devel
-    dnf -y install python3-qgis
-    dnf install qgis-grass
-    dnf -y update
-    
     
