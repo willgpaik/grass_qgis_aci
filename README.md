@@ -27,3 +27,6 @@ $ rm worldlocation.tar.gz
 2021/03/10  
 OS is upgraded to Centos 8 from Centos 7  
 GRASS is upgraded to 7.8.5
+
+2021/03/17  
+QGIS is removed (can be added again later if requested)
