@@ -55,7 +55,7 @@ From: willgpaik/centos8_roar
     pip3 install python-dateutil
     pip3 install pillow
     pip3 install matplotlib
-    pip3 insatll six
+    pip3 install six
     pip3 install GDAL==3.0.4
     
     # Required by GRASS 7.8.5
