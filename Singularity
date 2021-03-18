@@ -41,7 +41,7 @@ From: willgpaik/centos8_roar
     	wxGTK3-devel libXmu-devel libX11-devel blas-devel netcdf netcdf-devel atlas-devel lapack-devel
 	
     # Then install GDAL from EPEL
-    dnf -y install gdal gdal-libs gdal-python-tools python3-gdal gdal-devel ffmpeg
+    dnf -y install gdal gdal-libs gdal-python-tools python3-gdal gdal-devel
     
     # To fix issue with "libpq-fe.h not found" and "geos_c.h" not found
     dnf -y install postgresql-devel
