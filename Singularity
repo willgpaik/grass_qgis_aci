@@ -78,7 +78,7 @@ From: willgpaik/centos8_roar
     
     # Now install GRASS GIS 7:
     #wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
-    dnf -y updategrass path <unknown> doesn't exist
+    #dnf -y updategrass path <unknown> doesn't exist
     #dnf -y install grass grass-libs grass-gui liblas
     # needed for GRASS Addons (via g.extension)
     #dnf -y install grass-devel vblas-devel
