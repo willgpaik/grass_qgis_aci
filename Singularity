@@ -77,28 +77,30 @@ From: willgpaik/centos8_roar
     #dnf -y install laszip-devel
     
     # Now install GRASS GIS 7:
-    #wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
-    dnf -y update
-    #dnf -y install grass grass-libs grass-gui liblas
-    # needed for GRASS Addons (via g.extension)
-    #dnf -y install grass-devel vblas-devel
-    mkdir -p /opt/sw
-    cd /opt/sw
-    mkdir grass
-    wget https://github.com/OSGeo/grass/archive/7.8.5.tar.gz
-    tar -xf 7.8.5.tar.gz && rm 7.8.5.tar.gz
-    cd grass-7.8.5
-    ./configure --prefix=/opt/sw/grass --with-cxx --with-sqlite --with-python --with-geos \
-    	--with-gdal=/usr/bin/gdal-config --with-cairo --with-cairo-ldflags=-lfontconfig \
-	--with-freetype --with-freetype-includes=/usr/include/freetype2 \
-	--with-proj --with-proj-share=/usr/share/proj --with-openmp --with-blas --with-lapack \
-	--enable-largefile --with-wxwidgets=/usr/bin/wx-config --with-openmp \
-	--with-fftw --with-netcdf --without-ffmpeg --without-mysql --without-postgres \
-	--without-odbc --without-fftw
-    make -j 2
-    make install
-    cd /opt/sw
-    rm -rf grass-7.8.5
+    ##wget -O /etc/yum.repos.d/grass78.repo https://copr.fedoraproject.org/coprs/neteler/grass78/repo/epel-7/neteler-grass78-epel-7.repo
+    #dnf -y update
+    ##dnf -y install grass grass-libs grass-gui liblas
+    ## needed for GRASS Addons (via g.extension)
+    ##dnf -y install grass-devel vblas-devel
+    #mkdir -p /opt/sw
+    #cd /opt/sw
+    #mkdir grass
+    #wget https://github.com/OSGeo/grass/archive/7.8.5.tar.gz
+    #tar -xf 7.8.5.tar.gz && rm 7.8.5.tar.gz
+    #cd grass-7.8.5
+    #./configure --prefix=/opt/sw/grass --with-cxx --with-sqlite --with-python --with-geos \
+#    	--with-gdal=/usr/bin/gdal-config --with-cairo --with-cairo-ldflags=-lfontconfig \
+#	--with-freetype --with-freetype-includes=/usr/include/freetype2 \
+#	--with-proj --with-proj-share=/usr/share/proj --with-openmp --with-blas --with-lapack \
+#	--enable-largefile --with-wxwidgets=/usr/bin/wx-config --with-openmp \
+#	--with-fftw --with-netcdf --without-ffmpeg --without-mysql --without-postgres \
+#	--without-odbc --without-fftw
+    #make -j 2
+    #make install
+    #cd /opt/sw
+    #rm -rf grass-7.8.5
+    
+    dnf -y install grass-devel grass-gui grass-libs
     
     
     
