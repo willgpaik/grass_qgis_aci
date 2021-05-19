@@ -8,6 +8,7 @@ From: willgpaik/centos8_roar
     # https://stackoverflow.com/a/25022770
     export PATH=$PATH:/opt/sw/grass/bin:/opt/sw/grass/grass78/bin:/opt/sw/grass/grass78/scripts
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sw/grass/grass78/lib
+    export GRASS_LD_LIBRARY_PATH=$GRASS_LD_LIBRARY_PATH
     export CPATH=$CPATH:/opt/sw/grass/grass78/include
     export PYTHONPATH=$PYTHONPATH:/opt/sw/grass/grass78/etc/python
     export GISBASE=/opt/sw/grass/grass78
@@ -39,6 +40,7 @@ From: willgpaik/centos8_roar
     # qgis dependencies: https://github.com/qgis/QGIS/blob/master/INSTALL.md#3-building-on-gnulinux
     dnf -y install proj-devel libspatialite-devel qwt-qt5-devel expat-devel qca-qt5-devel libzip-devel libzstd-devel sqlite-devel \
     	wxGTK3-devel libXmu-devel libX11-devel blas-devel netcdf netcdf-devel atlas-devel lapack-devel
+    dnf -y install subversion
 	
     # Then install GDAL from EPEL
     dnf -y install gdal gdal-libs gdal-python-tools python3-gdal gdal-devel
