@@ -30,3 +30,20 @@ GRASS is upgraded to 7.8.5
 
 2021/03/17  
 QGIS is removed (can be added again later if requested)
+
+2021/05/19  
+GRASS scripts are enabled  
+GRASS GIS Addons can be installed with command:  
+```
+$ g.extension extension=<Add-on> prefix=<Install_DIR>
+```
+Make sure to create ~/.grassrc.78 i.e.:  
+```
+GISDBASE: <PATH_TO_MAP_DATA>
+LOCATION_NAME: nc_basic_spm_grass7
+MAPSET: user1
+```
+then from container:  
+```
+export GISRC=$HOME/.grassrc.78
+```
