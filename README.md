@@ -45,5 +45,5 @@ MAPSET: user1
 ```
 then from container:  
 ```
-export GISRC=$HOME/.grassrc.78
+> export GISRC=$HOME/.grassrc.78
 ```
